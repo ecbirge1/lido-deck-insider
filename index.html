@@ -3,150 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Independent Carnival cruise planning guides, ship breakdowns, cabin tips, dining advice, port ideas, and first-day game plans.">
+  <meta name="description" content="Independent Carnival cruise planning guides, ship comparisons, cabin tips, dining advice, port ideas, and first-day game plans.">
   <title>Lido Deck Insider | Smarter Carnival Cruise Planning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/resort.css">
   <script defer src="assets/site.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="shell nav-wrap">
-      <a class="brand" href="index.html" aria-label="Lido Deck Insider home">
-        <span class="brand-mark" aria-hidden="true">LD</span>
-        <span><strong>Lido Deck</strong><small>INSIDER</small></span>
-      </a>
+      <a class="brand" href="index.html" aria-label="Lido Deck Insider home"><span class="brand-mark">LD</span><span><strong>Lido Deck</strong><small>INSIDER</small></span></a>
       <button class="menu-button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <a href="ships/index.html">Ships</a>
-        <a href="#planning">Planning</a>
-        <a href="#cabins">Cabins</a>
-        <a href="#ports">Ports</a>
-        <a class="nav-cta" href="#newsletter">Get the free checklist</a>
+        <a href="ships/index.html">Ships</a><a href="guides/embarkation-day.html">Planning</a><a href="guides/cabin-selection.html">Cabins</a><a href="guides/port-day.html">Ports</a><a class="nav-cta" href="#newsletter">Free checklist</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero hero-resort">
       <div class="hero-wake" aria-hidden="true"></div>
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Independent Carnival cruise intelligence</p>
-          <h1>Know the ship before you step aboard.</h1>
-          <p class="hero-lead">Deck-by-deck guides, cabin warnings, dining shortcuts, port strategies, and first-day plans built to help real cruisers waste less time and enjoy more of the trip.</p>
-          <div class="button-row">
-            <a class="button button-primary" href="ships/index.html">Explore the ships</a>
-            <a class="button button-ghost" href="#newsletter">Get the free embarkation checklist</a>
-          </div>
-          <ul class="trust-row" aria-label="Site benefits">
-            <li>No brochure fluff</li>
-            <li>Mobile-friendly guides</li>
-            <li>Independent advice</li>
-          </ul>
+          <h1>Step aboard already knowing the ship.</h1>
+          <p class="hero-lead">Choose the right vessel, avoid cabin regrets, find the best onboard zones, and start vacation without wasting the first day figuring everything out.</p>
+          <div class="button-row"><a class="button button-primary" href="ships/index.html">Find your ship</a><a class="button button-ghost" href="guides/embarkation-day.html">Plan embarkation day</a></div>
+          <ul class="trust-row"><li>Independent advice</li><li>Ship-by-ship strategy</li><li>Made for mobile</li></ul>
         </div>
-        <aside class="hero-card" aria-label="Featured planning guide">
-          <div class="card-ribbon">Start here</div>
-          <p class="card-kicker">The 90-minute advantage</p>
-          <h2>Your first hour aboard can shape the whole cruise.</h2>
-          <ol>
-            <li>Handle your must-do reservations</li>
-            <li>Learn three routes before crowds build</li>
-            <li>Eat away from the first-day bottleneck</li>
-            <li>Lock in the evening before unpacking</li>
-          </ol>
-          <a href="guides/embarkation-day.html">Open the embarkation game plan <span aria-hidden="true">→</span></a>
-        </aside>
+        <div class="hero-art-wrap">
+          <img class="hero-art" src="assets/lido-hero.svg" alt="Sunny cruise ship Lido deck overlooking the ocean">
+          <div class="sun-badge">VACATION MODE<small>STARTS HERE</small></div>
+          <div class="hero-ticket"><span class="ticket-icon">⚓</span><div><strong>Know before you go</strong><span>Cabins, dining, decks, crowds and first-day moves.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ocean-strip" aria-label="Cruise planning categories">
+      <div class="shell ocean-strip-grid"><div><span>🛳️</span> Ship personality</div><div><span>☀️</span> Lido deck strategy</div><div><span>🛏️</span> Cabin warnings</div><div><span>🏝️</span> Port-day plans</div></div>
+    </section>
+
+    <section class="ship-selector">
+      <div class="shell">
+        <div class="section-heading"><p class="eyebrow">Start with the ship</p><h2>Different Carnival ships create very different vacations.</h2><p>Compare scale, layout, energy, signature attractions, dining variety and the type of cruiser each ship serves best.</p></div>
+        <div class="ship-showcase">
+          <a class="cruise-card sunset" href="ships/mardi-gras.html"><span class="class-tag">Excel class</span><span class="mini-ship"></span><h3>Mardi Gras</h3><p>Huge variety, six themed zones and a ship that rewards advance planning.</p><b>Open ship guide →</b></a>
+          <a class="cruise-card island" href="ships/carnival-celebration.html"><span class="class-tag">Excel class</span><span class="mini-ship"></span><h3>Carnival Celebration</h3><p>Miami energy, destination-inspired zones and one of Carnival’s deepest venue lineups.</p><b>Open ship guide →</b></a>
+          <a class="cruise-card" href="ships/carnival-jubilee.html"><span class="class-tag">Excel class</span><span class="mini-ship"></span><h3>Carnival Jubilee</h3><p>Texas personality, family attractions and a massive neighborhood-style layout.</p><b>Open ship guide →</b></a>
+          <a class="cruise-card city" href="ships/carnival-vista.html"><span class="class-tag">Vista class</span><span class="mini-ship"></span><h3>Carnival Vista</h3><p>A lively large ship with strong outdoor features and cabin choices worth studying.</p><b>Open ship guide →</b></a>
+          <a class="cruise-card sunset" href="ships/carnival-horizon.html"><span class="class-tag">Vista class</span><span class="mini-ship"></span><h3>Carnival Horizon</h3><p>Busy, polished and packed with dining, entertainment and family options.</p><b>Open ship guide →</b></a>
+          <a class="cruise-card island" href="ships/carnival-breeze.html"><span class="class-tag">Dream class</span><span class="mini-ship"></span><h3>Carnival Breeze</h3><p>A more manageable ship with classic Carnival energy and strong open-deck appeal.</p><b>Open ship guide →</b></a>
+        </div>
+        <div class="button-row" style="justify-content:center;margin-top:30px"><a class="button button-primary" href="ships/index.html">Browse the ship library</a></div>
+      </div>
+    </section>
+
+    <section class="vibe-section">
+      <div class="shell vibe-grid">
+        <div class="vibe-panel ocean"><p class="eyebrow light">The Lido Deck advantage</p><h2>Spend less vacation time standing in the wrong line.</h2><p>We focus on the moments that shape the cruise: the first lunch rush, pool-deck traffic, hard-to-change reservations, long cross-ship walks and cabin locations that look fine until bedtime.</p><div class="tip-stack"><article><strong>Before booking</strong><span>Match the ship and cabin to your actual vacation style.</span></article><article><strong>Before boarding</strong><span>Choose priorities and backups while decisions are still easy.</span></article><article><strong>On the ship</strong><span>Use timing, zones and shorter routes to avoid unnecessary friction.</span></article></div><div class="deck-lines" aria-hidden="true"></div></div>
+        <div class="vibe-panel sand"><p class="eyebrow">Plan the feeling, not just the itinerary</p><h2>What kind of cruise do you want?</h2><ul class="beach-list"><li>Big-ship attractions and nonstop variety</li><li>A calmer pool deck and easier navigation</li><li>Family activities without constant backtracking</li><li>Dining choices that fit your budget</li><li>Nightlife near your cabin—or far away from it</li><li>A port plan with enough return margin</li></ul><a class="button button-primary" href="ships/index.html" style="margin-top:32px">Compare ship styles</a></div>
       </div>
     </section>
 
     <section class="quick-find" aria-labelledby="quick-find-title">
-      <div class="shell">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="eyebrow">Find your starting point</p>
-            <h2 id="quick-find-title">Plan around the decision that matters now.</h2>
-          </div>
-          <p>Skip the endless scrolling. Choose the question you are trying to answer and go straight to the useful part.</p>
-        </div>
-        <div class="decision-grid">
-          <a class="decision-card" href="ships/index.html"><span>01</span><h3>Which ship fits me?</h3><p>Compare atmosphere, layout, dining, pools, entertainment, and family features.</p><b>Browse ship guides →</b></a>
-          <a class="decision-card" id="cabins" href="guides/cabin-selection.html"><span>02</span><h3>Which cabin should I book?</h3><p>Understand location tradeoffs, noise risks, motion, connecting rooms, and deck placement.</p><b>Use the cabin guide →</b></a>
-          <a class="decision-card" id="planning" href="guides/embarkation-day.html"><span>03</span><h3>What should I do first?</h3><p>Turn embarkation day into a calm, organized head start instead of a crowded scramble.</p><b>See the first-day plan →</b></a>
-          <a class="decision-card" id="ports" href="guides/port-day.html"><span>04</span><h3>How should I plan port days?</h3><p>Balance excursions, independent exploring, transport time, backup plans, and all-aboard risk.</p><b>Build a port strategy →</b></a>
-        </div>
+      <div class="shell"><div class="section-heading split-heading"><div><p class="eyebrow">Plan the decisions that matter</p><h2 id="quick-find-title">Four shortcuts to a smoother cruise.</h2></div><p>Skip generic packing-list content and go straight to the choices that are expensive, crowded or hard to undo.</p></div>
+        <div class="decision-grid"><a class="decision-card" href="ships/index.html"><span>01</span><h3>Choose the ship</h3><p>Compare atmosphere, layout, dining, pools, entertainment and family features.</p><b>Browse ship guides →</b></a><a class="decision-card" href="guides/cabin-selection.html"><span>02</span><h3>Choose the cabin</h3><p>Understand location tradeoffs, noise risks, motion and deck placement.</p><b>Use the cabin guide →</b></a><a class="decision-card" href="guides/embarkation-day.html"><span>03</span><h3>Win the first day</h3><p>Handle time-sensitive tasks without turning embarkation into a race.</p><b>See the first-day plan →</b></a><a class="decision-card" href="guides/port-day.html"><span>04</span><h3>Protect port days</h3><p>Balance excursions, transportation, backups and all-aboard risk.</p><b>Build a port strategy →</b></a></div>
       </div>
     </section>
 
-    <section class="feature-band">
-      <div class="shell feature-grid">
-        <div class="feature-copy">
-          <p class="eyebrow light">Featured ship guide</p>
-          <h2>Mardi Gras: a neighborhood-by-neighborhood strategy.</h2>
-          <p>Large ships are easier when you stop thinking of them as one giant vessel. Our guide breaks Mardi Gras into usable zones, explains where crowds form, and helps you build a simple mental map before sailing.</p>
-          <div class="stat-row">
-            <div><strong>6</strong><span>neighborhoods to learn</span></div>
-            <div><strong>3</strong><span>traffic patterns to avoid</span></div>
-            <div><strong>1</strong><span>simple first-day route</span></div>
-          </div>
-          <a class="button button-light" href="ships/mardi-gras.html">Read the Mardi Gras guide</a>
-        </div>
-        <div class="deck-map" role="img" aria-label="Stylized diagram showing cruise ship neighborhoods">
-          <div class="ship-label">MARDI GRAS</div>
-          <div class="deck deck-a"><span>The Ultimate Playground</span></div>
-          <div class="deck deck-b"><span>Lido</span><span>Summer Landing</span></div>
-          <div class="deck deck-c"><span>La Piazza</span><span>French Quarter</span></div>
-          <div class="deck deck-d"><span>Grand Central</span></div>
-          <div class="ship-hull"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="insider-method" aria-labelledby="method-title">
-      <div class="shell method-grid">
-        <div class="method-intro">
-          <p class="eyebrow">The insider method</p>
-          <h2 id="method-title">We organize every guide around the moments that cost cruisers time.</h2>
-          <p>You do not need another giant list of venues. You need to know what fills early, where navigation gets confusing, which choices are hard to undo, and what can safely wait.</p>
-        </div>
-        <div class="method-list">
-          <article><span>Before booking</span><h3>Choose the right ship and cabin.</h3><p>Match the ship’s personality and layout to the experience you actually want.</p></article>
-          <article><span>Before sailing</span><h3>Pre-decide the crowded choices.</h3><p>Know your priorities, backup options, and first-day sequence before vacation mode begins.</p></article>
-          <article><span>On board</span><h3>Use timing and geography.</h3><p>Small route and timing changes can make a large ship feel dramatically easier.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="newsletter" class="newsletter">
-      <div class="shell newsletter-box">
-        <div>
-          <p class="eyebrow light">Free planning tool</p>
-          <h2>The Calm Embarkation Checklist</h2>
-          <p>A one-page sequence for the week before sailing, arrival morning, and your first 90 minutes aboard.</p>
-        </div>
-        <form class="signup-form" data-signup-form>
-          <label for="email">Email address</label>
-          <div class="form-row">
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-            <button class="button button-accent" type="submit">Send the checklist</button>
-          </div>
-          <p class="form-note">Free guide. Useful cruise emails only. Unsubscribe anytime.</p>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+    <section id="newsletter" class="newsletter"><div class="shell newsletter-box"><div><p class="eyebrow light">Free planning tool</p><h2>The Calm Embarkation Checklist</h2><p>A one-page sequence for the week before sailing, arrival morning and your first 90 minutes aboard.</p></div><form class="signup-form" data-signup-form><label for="email">Email address</label><div class="form-row"><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="button button-accent" type="submit">Send the checklist</button></div><p class="form-note">Free guide. Useful cruise emails only. Unsubscribe anytime.</p><p class="form-status" role="status" aria-live="polite"></p></form></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">LD</span><span><strong>Lido Deck</strong><small>INSIDER</small></span></a><p>Independent planning help for Carnival cruisers.</p></div>
-      <div><h2>Explore</h2><a href="ships/index.html">Ship guides</a><a href="guides/cabin-selection.html">Cabin selection</a><a href="guides/embarkation-day.html">Embarkation day</a></div>
-      <div><h2>Important</h2><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="disclosure.html">Disclosure</a></div>
-    </div>
-    <div class="shell legal-row"><p>© <span data-year></span> Lido Deck Insider.</p><p>Independent site. Not affiliated with or endorsed by Carnival Corporation or Carnival Cruise Line.</p></div>
-  </footer>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand footer-brand" href="index.html"><span class="brand-mark">LD</span><span><strong>Lido Deck</strong><small>INSIDER</small></span></a><p>Independent planning help for Carnival cruisers.</p></div><div><h2>Explore</h2><a href="ships/index.html">Ship guides</a><a href="guides/cabin-selection.html">Cabin selection</a><a href="guides/embarkation-day.html">Embarkation day</a></div><div><h2>Important</h2><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="disclosure.html">Disclosure</a></div></div><div class="shell legal-row"><p>© <span data-year></span> Lido Deck Insider.</p><p>Independent site. Not affiliated with or endorsed by Carnival Corporation or Carnival Cruise Line.</p></div></footer>
 </body>
 </html>
