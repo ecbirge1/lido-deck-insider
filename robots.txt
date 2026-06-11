@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ecbirge1.github.io/lido-deck-insider/sitemap.xml
