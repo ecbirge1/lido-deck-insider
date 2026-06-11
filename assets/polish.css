@@ -1,0 +1,58 @@
+/* Mobile and card polish pass */
+.cruise-card{min-height:270px;padding:24px;border-radius:22px}
+.cruise-card:before{background:linear-gradient(180deg,rgba(3,35,52,0) 20%,rgba(3,35,52,.35) 48%,rgba(3,35,52,.94) 100%)}
+.cruise-card:after{background:radial-gradient(circle at 78% 18%,rgba(255,241,169,.9) 0 8%,transparent 9%),linear-gradient(180deg,#8edbe6 0 39%,#2a9bb0 40% 58%,#0a617c 59% 70%,#06354d 71%)}
+.cruise-card.sunset:after{background:radial-gradient(circle at 78% 18%,#ffd166 0 8%,transparent 9%),linear-gradient(180deg,#ffd5aa 0 36%,#f39a7c 37% 51%,#167f98 52% 69%,#06354d 70%)}
+.cruise-card.island:after{background:radial-gradient(circle at 76% 17%,#fff3a8 0 7%,transparent 8%),linear-gradient(180deg,#9be5ec 0 38%,#f5dfad 39% 49%,#35a4aa 50% 66%,#063f59 67%)}
+.cruise-card.city:after{background:radial-gradient(circle at 78% 18%,rgba(255,255,255,.8) 0 7%,transparent 8%),linear-gradient(180deg,#a7dcea 0 39%,#4d9db2 40% 58%,#176b85 59% 70%,#06354d 71%)}
+.cruise-card .mini-ship{left:auto;right:22px;top:68px;width:104px;height:31px;opacity:.92;filter:drop-shadow(0 8px 8px rgba(3,35,52,.2))}
+.cruise-card .mini-ship:before{left:25px;right:20px;height:16px;top:-14px;border-radius:8px 8px 2px 2px}
+.cruise-card h3{font-size:29px;max-width:90%}
+.cruise-card p{font-size:14px;line-height:1.45;max-width:92%}
+.ship-selector{padding:82px 0 76px}
+.vibe-section{padding:82px 0}
+
+@media(max-width:620px){
+  :root{--shell:min(100% - 28px,1180px)}
+  .site-header .nav-wrap{min-height:72px}
+  .brand{font-size:17px}.brand-mark{width:40px;height:40px}
+  .menu-button{padding:9px 15px;font-size:16px}
+  .primary-nav{top:68px;left:12px;right:12px;gap:0!important;padding:8px 12px!important;border-radius:17px!important;box-shadow:0 18px 44px rgba(5,43,62,.18)!important}
+  .primary-nav a{padding:13px 10px!important;font-size:16px;border-bottom:1px solid #eef2f3}
+  .primary-nav a:last-child{border-bottom:0}
+  .primary-nav .nav-cta{margin-top:6px;padding:12px 14px!important;text-align:center}
+  .hero-resort h1{font-size:44px;line-height:1.02}
+  .hero-resort .hero-grid{padding-top:48px;padding-bottom:58px;gap:26px}
+  .hero-resort .hero-lead{font-size:16px;line-height:1.55}
+  .hero-art-wrap{margin-top:0}
+  .sun-badge{display:none}
+  .hero-ticket{margin:-18px 8px 0}
+  .ocean-strip-grid{grid-template-columns:1fr 1fr;gap:12px 16px;padding:18px 0}
+  .ocean-strip-grid div{font-size:10px;line-height:1.25;gap:8px}
+  .ocean-strip-grid span{font-size:18px}
+  .ship-selector{padding:58px 0 54px}
+  .ship-selector .section-heading{margin-bottom:28px;text-align:left}
+  .ship-selector .section-heading .eyebrow{margin-bottom:8px}
+  .ship-selector .section-heading h2{font-size:38px;line-height:1.03;text-align:left}
+  .ship-selector .section-heading>p{font-size:16px;line-height:1.5;text-align:left;margin-top:14px}
+  .ship-showcase{grid-template-columns:1fr;gap:14px}
+  .cruise-card{min-height:220px;padding:20px;border-radius:20px}
+  .cruise-card .mini-ship{right:18px;top:55px;width:82px;height:24px}
+  .cruise-card .mini-ship:before{left:20px;right:16px;height:12px;top:-11px}
+  .cruise-card .class-tag{font-size:9px;padding:5px 8px}
+  .cruise-card h3{font-size:28px;max-width:76%;margin-bottom:6px}
+  .cruise-card p{font-size:14px;line-height:1.42;max-width:88%;margin-bottom:12px}
+  .cruise-card b{font-size:13px}
+  .ship-selector .button-row{margin-top:20px!important}
+  .vibe-section{padding:58px 0}
+  .vibe-grid{gap:16px}
+  .vibe-panel{padding:26px 22px;border-radius:22px}
+  .vibe-panel h2{font-size:36px;line-height:1.05}
+  .vibe-panel p{font-size:15px}
+  .tip-stack{margin-top:24px;gap:10px}
+  .tip-stack article{padding:13px 14px}
+  .beach-list{gap:12px;margin-top:22px}
+  .quick-find{padding:58px 0}
+  .quick-find .section-heading h2{font-size:36px}
+  .newsletter{padding:58px 0}
+}
