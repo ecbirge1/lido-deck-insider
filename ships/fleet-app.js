@@ -18,39 +18,39 @@
   const futureGrid = document.querySelector('[data-future-grid]');
   const selected = new Set();
 
-  const unique = (key) => [...new Set(fleet.map(item => item[key]))].sort();
-  const addOptions = (select, values) => {
-    values.forEach(value => {
-      const option = document.createElement('option');
-      option.value = value;
-      option.textContent = value;
-      select.appendChild(option);
-    });
-  };
-
+  const unique = key => [...new Set(fleet.map(item => item[key]))].sort();
+  const addOptions = (select, values) => values.forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
+  });
   addOptions(classFilter, unique('group'));
   addOptions(scaleFilter, unique('scale'));
 
   const stars = value => '●'.repeat(value) + '○'.repeat(5 - value);
-  const slug = value => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   function card(item) {
-    const link = item.guide || `ship.html?ship=${encodeURIComponent(item.id)}`;
-    const status = item.status === 'full' ? 'Full insider guide' : 'Fleet overview';
+    const action = item.guide
+      ? `<a href="${item.guide}">Open full guide →</a>`
+      : `<button class="overview-toggle" type="button" data-overview-toggle="${item.id}" aria-expanded="false">Show full overview ↓</button>`;
     return `<article class="fleet-card" data-name="${item.name.toLowerCase()}">
       <div class="fleet-card-top">
         <div><span class="fleet-class">${item.group}</span><h2>${item.name}</h2><p>${item.style}</p></div>
         <label class="compare-check"><input type="checkbox" value="${item.id}" data-compare-check aria-label="Compare ${item.name}"><span>Compare</span></label>
       </div>
       <div class="fleet-metrics">
-        <span><b>Energy</b>${stars(item.energy)}</span>
-        <span><b>Family</b>${stars(item.family)}</span>
-        <span><b>Dining</b>${stars(item.dining)}</span>
-        <span><b>Easy layout</b>${stars(item.ease)}</span>
+        <span><b>Energy</b>${stars(item.energy)}</span><span><b>Family</b>${stars(item.family)}</span>
+        <span><b>Dining</b>${stars(item.dining)}</span><span><b>Easy layout</b>${stars(item.ease)}</span>
       </div>
       <p class="fleet-best"><strong>Best for:</strong> ${item.best}</p>
       <ul class="fleet-feature-list">${item.features.slice(0,3).map(feature => `<li>${feature}</li>`).join('')}</ul>
-      <div class="fleet-card-footer"><span>${status}</span><a href="${link}">Open ship page →</a></div>
+      <div class="fleet-overview" id="overview-${item.id}" hidden>
+        <p><strong>Highlights:</strong> ${item.features.join(', ')}</p>
+        <p><strong>Watch for:</strong> ${item.cautions.join(', ')}</p>
+        <p><strong>Planning take:</strong> ${item.name} scores ${item.ease}/5 for easy navigation, ${item.family}/5 for family fit, ${item.dining}/5 for dining variety, and ${item.quiet}/5 for quiet options.</p>
+      </div>
+      <div class="fleet-card-footer"><span>${item.status === 'full' ? 'Full insider guide' : 'Fleet overview'}</span>${action}</div>
     </article>`;
   }
 
@@ -75,17 +75,22 @@
     grid.querySelectorAll('[data-compare-check]').forEach(input => {
       input.checked = selected.has(input.value);
       input.addEventListener('change', () => {
-        if (input.checked) {
-          if (selected.size >= 3) {
-            input.checked = false;
-            alert('Compare up to three ships at a time.');
-            return;
-          }
-          selected.add(input.value);
-        } else selected.delete(input.value);
+        if (input.checked && selected.size >= 3) {
+          input.checked = false;
+          alert('Compare up to three ships at a time.');
+          return;
+        }
+        input.checked ? selected.add(input.value) : selected.delete(input.value);
         updateTray();
       });
     });
+    grid.querySelectorAll('[data-overview-toggle]').forEach(button => button.addEventListener('click', () => {
+      const panel = document.getElementById(`overview-${button.dataset.overviewToggle}`);
+      const opening = panel.hidden;
+      panel.hidden = !opening;
+      button.setAttribute('aria-expanded', String(opening));
+      button.textContent = opening ? 'Hide overview ↑' : 'Show full overview ↓';
+    }));
   }
 
   function updateTray() {
@@ -104,17 +109,10 @@
   function openComparison() {
     const items = fleet.filter(item => selected.has(item.id));
     const rows = [
-      ['Class', item => item.group],
-      ['Scale', item => item.scale],
-      ['Style', item => item.style],
-      ['Best for', item => item.best],
-      ['Energy', item => stars(item.energy)],
-      ['Family fit', item => stars(item.family)],
-      ['Dining', item => stars(item.dining)],
-      ['Easy layout', item => stars(item.ease)],
-      ['Quiet options', item => stars(item.quiet)],
-      ['Highlights', item => item.features.join('<br>')],
-      ['Watch for', item => item.cautions.join('<br>')]
+      ['Class', item => item.group],['Scale', item => item.scale],['Style', item => item.style],['Best for', item => item.best],
+      ['Energy', item => stars(item.energy)],['Family fit', item => stars(item.family)],['Dining', item => stars(item.dining)],
+      ['Easy layout', item => stars(item.ease)],['Quiet options', item => stars(item.quiet)],
+      ['Highlights', item => item.features.join('<br>')],['Watch for', item => item.cautions.join('<br>')]
     ];
     compareTable.innerHTML = `<thead><tr><th>Category</th>${items.map(item => `<th>${item.name}</th>`).join('')}</tr></thead><tbody>${rows.map(([label,format]) => `<tr><th>${label}</th>${items.map(item => `<td>${format(item)}</td>`).join('')}</tr>`).join('')}</tbody>`;
     comparePanel.hidden = false;
@@ -127,7 +125,6 @@
   compareClose.addEventListener('click', () => { comparePanel.hidden = true; document.body.classList.remove('modal-open'); });
   comparePanel.addEventListener('click', event => { if (event.target === comparePanel) compareClose.click(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !comparePanel.hidden) compareClose.click(); });
-
   if (futureGrid) futureGrid.innerHTML = future.map(item => `<article class="future-card"><span>Arriving ${item.year}</span><h3>${item.name}</h3><p><strong>Expected homeport:</strong> ${item.home}</p><p>${item.note}</p></article>`).join('');
   render();
 })();
