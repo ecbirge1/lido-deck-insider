@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /downloads/
+Disallow: /tools/
 
 Sitemap: https://ecbirge1.github.io/lido-deck-insider/sitemap.xml
