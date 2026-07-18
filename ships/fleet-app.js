@@ -31,9 +31,7 @@
   const stars = value => '●'.repeat(value) + '○'.repeat(5 - value);
 
   function card(item) {
-    const action = item.guide
-      ? `<a href="${item.guide}">Open full guide →</a>`
-      : `<button class="overview-toggle" type="button" data-overview-toggle="${item.id}" aria-expanded="false">Show full overview ↓</button>`;
+    const guideUrl = item.guide || `ship-guide.html?ship=${encodeURIComponent(item.id)}`;
     return `<article class="fleet-card" data-name="${item.name.toLowerCase()}">
       <div class="fleet-card-top">
         <div><span class="fleet-class">${item.group}</span><h2>${item.name}</h2><p>${item.style}</p></div>
@@ -50,7 +48,7 @@
         <p><strong>Watch for:</strong> ${item.cautions.join(', ')}</p>
         <p><strong>Planning take:</strong> ${item.name} scores ${item.ease}/5 for easy navigation, ${item.family}/5 for family fit, ${item.dining}/5 for dining variety, and ${item.quiet}/5 for quiet options.</p>
       </div>
-      <div class="fleet-card-footer"><span>${item.status === 'full' ? 'Full insider guide' : 'Fleet overview'}</span>${action}</div>
+      <div class="fleet-card-footer"><span>Full insider guide</span><a href="${guideUrl}">Open full guide →</a></div>
     </article>`;
   }
 
@@ -70,7 +68,7 @@
 
   function render() {
     const items = filteredFleet();
-    resultCount.textContent = `${items.length} ship${items.length === 1 ? '' : 's'}`;
+    resultCount.textContent = `${items.length} ship${items.length === 1 ? '' : 's'} — every ship now has a detailed guide`;
     grid.innerHTML = items.map(card).join('') || '<p class="empty-state">No ships match those filters. Clear a filter or try a broader search.</p>';
     grid.querySelectorAll('[data-compare-check]').forEach(input => {
       input.checked = selected.has(input.value);
@@ -84,13 +82,6 @@
         updateTray();
       });
     });
-    grid.querySelectorAll('[data-overview-toggle]').forEach(button => button.addEventListener('click', () => {
-      const panel = document.getElementById(`overview-${button.dataset.overviewToggle}`);
-      const opening = panel.hidden;
-      panel.hidden = !opening;
-      button.setAttribute('aria-expanded', String(opening));
-      button.textContent = opening ? 'Hide overview ↑' : 'Show full overview ↓';
-    }));
   }
 
   function updateTray() {
