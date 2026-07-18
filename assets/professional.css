@@ -1,0 +1,82 @@
+/* Professional editorial override for the Lido Deck Insider homepage */
+:root{--premium-ink:#102532;--premium-navy:#092f43;--premium-blue:#0d5c73;--premium-teal:#187f86;--premium-paper:#f7f8f7;--premium-line:#dce4e6;--premium-muted:#5f7079}
+body{background:#fff;color:var(--premium-ink)}
+.affiliate-notice{background:#0b2636;color:#cad7dc;font-size:10px;padding:6px 16px}
+.site-header{box-shadow:none;border-bottom:1px solid #e6ecee;background:rgba(255,255,255,.97)}
+.brand-mark{border-radius:8px;background:var(--premium-navy);box-shadow:none;font-family:'DM Sans',sans-serif;font-size:14px;letter-spacing:.05em}
+.brand small{color:var(--premium-teal)}
+
+.hero.hero-resort{min-height:auto;background:#f3f6f7;border-bottom:1px solid var(--premium-line)}
+.hero.hero-resort:before,.hero-wake,.hero-art-wrap{display:none!important}
+.hero-resort .hero-grid{display:block;max-width:940px;padding:105px 0 112px}
+.hero-resort .hero-copy{max-width:900px}
+.hero-resort h1{max-width:900px;font-family:'DM Sans',sans-serif;font-size:clamp(48px,7vw,82px);line-height:.98;letter-spacing:-.055em;font-weight:800;text-wrap:balance}
+.hero-resort .hero-lead{max-width:760px;font-size:20px;line-height:1.55;color:#4f626d;margin:30px 0}
+.hero-resort .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--premium-teal)}
+.button{border-radius:7px;padding:14px 20px}
+.button-primary{background:var(--premium-navy);box-shadow:none}
+.button-ghost{background:#fff;border-color:#bdcbd0}
+.trust-row{margin-top:30px;color:#61737b}
+
+.ocean-strip{background:#fff;color:var(--premium-ink);border-bottom:1px solid var(--premium-line)}
+.ocean-strip:before,.ocean-strip:after{display:none}
+.ocean-strip-grid{padding:18px 0}
+.ocean-strip-grid div{font-weight:700;font-size:12px;color:#52666f;border-right:1px solid var(--premium-line)}
+.ocean-strip-grid div:last-child{border-right:0}
+.ocean-strip-grid span{font-size:17px;filter:grayscale(1)}
+
+.editorial-intro{padding:90px 0;background:#fff}
+.editorial-grid{grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.editorial-grid h2{font-family:'DM Sans',sans-serif;font-size:clamp(38px,5vw,58px);line-height:1.02;letter-spacing:-.045em}
+.editorial-grid>p{font-size:18px;line-height:1.75;color:var(--premium-muted)}
+
+.ship-selector{padding:95px 0;background:var(--premium-paper);border-top:1px solid #edf1f2;border-bottom:1px solid #edf1f2}
+.ship-selector .section-heading{text-align:left;max-width:860px;margin:0 0 44px}
+.ship-selector .section-heading h2{font-family:'DM Sans',sans-serif;font-size:clamp(38px,5vw,60px);line-height:1.02;letter-spacing:-.045em;margin:0}
+.ship-selector .section-heading>p{margin:18px 0 0;max-width:720px;font-size:17px}
+.ship-showcase{grid-template-columns:repeat(3,1fr);gap:18px}
+.cruise-card{min-height:310px;border-radius:12px;padding:0;background:#fff;color:var(--premium-ink);border:1px solid var(--premium-line);box-shadow:none;justify-content:flex-start;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.cruise-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(16,37,50,.09);border-color:#bbcbd0}
+.cruise-card:before{content:"";position:relative;display:block;inset:auto;height:112px;width:100%;z-index:0;background:linear-gradient(135deg,#173f52,#0d6675)}
+.cruise-card:after{content:"";position:absolute;left:24px;top:78px;width:46px;height:3px;background:#fff;opacity:.9;z-index:1}
+.cruise-card.sunset:before{background:linear-gradient(135deg,#563f46,#b2745f)}
+.cruise-card.island:before{background:linear-gradient(135deg,#1e5860,#5a9a92)}
+.cruise-card.city:before{background:linear-gradient(135deg,#344b61,#677c8d)}
+.cruise-card .mini-ship{display:none!important}
+.cruise-card .class-tag{position:absolute;top:24px;left:24px;z-index:2;margin:0;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:4px;padding:6px 8px;font-size:9px;letter-spacing:.14em}
+.cruise-card h3{font-family:'DM Sans',sans-serif;font-size:25px;line-height:1.08;letter-spacing:-.025em;margin:25px 24px 9px;max-width:none}
+.cruise-card p{font-size:14px;line-height:1.55;color:var(--premium-muted);margin:0 24px 22px;max-width:none}
+.cruise-card b{margin:auto 24px 24px;font-size:12px;color:var(--premium-teal);letter-spacing:.01em}
+.centered{justify-content:flex-start;margin-top:30px}
+
+.monetization-band{padding:100px 0;background:var(--premium-navy)}
+.monetization-grid{grid-template-columns:.75fr 1.25fr;gap:70px}
+.monetization-copy h2,.toolkit-cta h2,.vibe-panel h2,.quick-find .section-heading h2{font-family:'DM Sans',sans-serif;letter-spacing:-.045em}
+.revenue-cards{gap:12px}
+.revenue-card{border-radius:10px;min-height:290px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.revenue-card:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
+.revenue-card>span{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.14em;color:#87bbc3}
+.revenue-card strong{font-family:'DM Sans',sans-serif;font-size:21px;line-height:1.15;margin-top:35px}
+.revenue-card.featured{border-radius:10px}
+.revenue-card.featured em{border-radius:4px}
+
+.vibe-section{padding:95px 0}
+.vibe-panel{border-radius:12px;padding:42px;min-height:410px}
+.vibe-panel.ocean{background:#113c50}
+.vibe-panel.sand{background:#eef2f1}
+.vibe-panel .deck-lines{display:none}
+.beach-list li:before{width:7px;height:7px;background:var(--premium-teal);box-shadow:none}
+.tip-stack article{border-radius:8px}
+
+.decision-card{border-radius:10px;min-height:270px}
+.decision-card>span{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.14em;color:#7a999f}
+.decision-card h3{font-size:20px}
+.toolkit-cta{background:#0b2b3b}
+.toolkit-cta ul,.newsletter-box{border-radius:12px}
+.newsletter-box{background:#155e6b;box-shadow:none}
+.newsletter-box:after{display:none}
+
+@media(max-width:900px){.editorial-grid,.monetization-grid{grid-template-columns:1fr;gap:34px}.ship-showcase{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){
+.hero-resort .hero-grid{padding:72px 0 78px}.hero-resort h1{font-size:46px;line-height:1.01}.hero-resort .hero-lead{font-size:17px}.ocean-strip-grid{grid-template-columns:1fr 1fr}.ocean-strip-grid div{border-right:0;justify-content:flex-start}.editorial-intro{padding:65px 0}.editorial-grid{gap:24px}.editorial-grid h2,.ship-selector .section-heading h2{font-size:38px}.ship-selector{padding:68px 0}.ship-showcase{grid-template-columns:1fr}.cruise-card{min-height:285px}.cruise-card h3{font-size:24px}.monetization-band,.vibe-section{padding:70px 0}.revenue-cards{grid-template-columns:1fr}.vibe-panel{padding:28px 24px}.centered{justify-content:stretch}.centered .button{width:100%}
+}
